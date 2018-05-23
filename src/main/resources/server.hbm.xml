@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="server.persistentclasses.UsersPersistentClass" table="USERS">
+        <meta attribute="class-description">
+            This class contains users details.
+        </meta>
+        <id name="userId" type="int" column="USER_ID">
+        </id>
+        <property name="userName" type="string" column="USER_NAME"/>
+        <property name="firstName" type="string" column="FIRST_NAME"/>
+        <property name="lastName" type="string" column="LAST_NAME"/>
+    </class>
+</hibernate-mapping>
