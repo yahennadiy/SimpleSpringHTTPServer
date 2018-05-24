@@ -2,7 +2,7 @@ package server.queryhandlers.checkers;
 
 import server.persistentclasses.UsersPersistentClass;
 
-public class PutQueryStructureChecker {
+public class PostPutQueryStructureChecker {
     public static boolean isValid(String[] userDataArr) {
         boolean result = false;
         if (userDataArr.length == UsersPersistentClass.getNumberOfFields()) {

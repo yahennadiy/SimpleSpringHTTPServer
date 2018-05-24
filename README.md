@@ -3,9 +3,16 @@
   The server uses the port 1111 (can be changed in the resourses/application.properties file).
   We can make a GET HTTP request with the username at localhost as http://localhost:1111/?userName=userName
    (eg http://localhost:1111/?userName=bobking) and get the user's data from database.
-  We can make a PUT HTTP request with the userdata at localhost as
+  We can make a DELETE HTTP request with the username at localhost as http://localhost:1111/?userName=userName
+     (eg http://localhost:1111/?userName=bobking) and remove the user's data from database, if userName exist in
+     database.
+  We can make a POST HTTP request with the userdata at localhost as
     http://localhost:1111/?userData=userName,firstName,lastName (eg http://localhost:1111/?userData=tomgrey,Tom,Grey)
-    and write the data into database.
+    and write the user's data into database, if userName not exist in database.
+  We can make a PUT HTTP request with the userdata at localhost as
+    http://localhost:1111/?userData=userName,firstName,lastName (eg http://localhost:1111/?userData=tomgrey,TOM,GREY)
+    and update the user's data in database, if userName exist in database.
+  We can perform requests using Postman or some other way.
 
   It is necessary:
 - change hibernate.cfg.xml for your database.

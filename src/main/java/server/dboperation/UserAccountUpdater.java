@@ -8,9 +8,8 @@ import org.hibernate.cfg.Configuration;
 import server.Main;
 import server.persistentclasses.UsersPersistentClass;
 
-public class UserSaver {
-    private static UsersPersistentClass user = new UsersPersistentClass();
-    public static String exec(String[] userDataArr) {
+public class UserAccountUpdater {
+    public static String exec(UsersPersistentClass user, String[] userDataArr) {
         String userName = userDataArr[0];
         String firstName = userDataArr[1];
         String lastName = userDataArr[2];
@@ -18,15 +17,14 @@ public class UserSaver {
         try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
             Session session = sessionFactory.openSession();
             Transaction tx = session.beginTransaction();
-            user.setUserName(userName);
             user.setFirstName(firstName);
             user.setLastName(lastName);
-            session.save(user);
+            session.update(user);
             tx.commit();
-            result = "User data of " + userName + " has stored";
+            result = "Userdata of " + userName + " has updated";
         } catch (HibernateException he) {
-            Main.getLogger().error("Hibernate exception in UserSaver class:", he);
-            result = "Database operation error. User data of " + userName + " has not stored";
+            Main.getLogger().error("Hibernate exception in UserAccountUpdater class:", he);
+            result = "Database operation error. Userdata of " + userName + " has not updated";
         }
 
         return result;

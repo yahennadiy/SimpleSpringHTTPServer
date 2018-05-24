@@ -1,23 +1,23 @@
 package server.queryhandlers;
 
 import server.dboperation.UserAccountHqlSelector;
-import server.dboperation.UserAccountUpdater;
+import server.dboperation.UserAccountRemover;
 import server.persistentclasses.UsersPersistentClass;
 
 import java.util.List;
 
-public class PutHandler {
-    public static String exec(String[] userDataArr) {
-        UsersPersistentClass user;
+public class DeleteHandler {
+    public static String exec(String userName) {
         String response;
-        List userData = UserAccountHqlSelector.exec(userDataArr[0]);
+        UsersPersistentClass user;
+        List userData = UserAccountHqlSelector.exec(userName);
         if (userData == null) {
             response = "database operation error";
         } else if (userData.isEmpty()) {
-            response = "username not exists";
+            response = "username not found";
         } else {
             user = (UsersPersistentClass) userData.get(0);
-            response = UserAccountUpdater.exec(user, userDataArr);
+            response = UserAccountRemover.exec(user);
         }
 
         return response;

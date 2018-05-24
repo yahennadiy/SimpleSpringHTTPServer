@@ -9,7 +9,7 @@ import server.Main;
 
 import java.util.List;
 
-public class UserHqlSelector {
+public class UserAccountHqlSelector {
     public static List exec(String userName) {
         List userData;
         try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
@@ -18,7 +18,7 @@ public class UserHqlSelector {
             query.setParameter("USER_NAME", userName);
             userData = query.list();
         } catch (HibernateException he) {
-            Main.getLogger().error("Hibernate exception in UserHQLSelector class: ", he);
+            Main.getLogger().error("Hibernate exception in UserAccountHQLSelector class: ", he);
             return null;
         }
 
