@@ -15,7 +15,6 @@ public class UsersPersistentClass {
     private String firstName;
     @Column(name = "LAST_NAME")
     private String lastName;
-    private static int numberOfFields = 3;
 
     public UsersPersistentClass() {
         //Must be
@@ -58,9 +57,5 @@ public class UsersPersistentClass {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public static int getNumberOfFields() {
-        return numberOfFields;
     }
 }

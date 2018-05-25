@@ -1,7 +1,7 @@
 # Compiled class file
 *.class
-out
-target
+out/
+target/
 
 # Log file
 *.log

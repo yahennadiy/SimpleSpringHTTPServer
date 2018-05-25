@@ -10,10 +10,7 @@ import server.persistentclasses.UsersPersistentClass;
 
 public class UserAccountSaver {
     private static UsersPersistentClass user = new UsersPersistentClass();
-    public static String exec(String[] userDataArr) {
-        String userName = userDataArr[0];
-        String firstName = userDataArr[1];
-        String lastName = userDataArr[2];
+    public static String exec(String userName, String firstName, String lastName) {
         String result;
         try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
             Session session = sessionFactory.openSession();

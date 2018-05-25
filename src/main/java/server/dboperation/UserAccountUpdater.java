@@ -9,10 +9,7 @@ import server.Main;
 import server.persistentclasses.UsersPersistentClass;
 
 public class UserAccountUpdater {
-    public static String exec(UsersPersistentClass user, String[] userDataArr) {
-        String userName = userDataArr[0];
-        String firstName = userDataArr[1];
-        String lastName = userDataArr[2];
+    public static String exec(UsersPersistentClass user, String userName, String firstName, String lastName) {
         String result;
         try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
             Session session = sessionFactory.openSession();
