@@ -7,11 +7,11 @@
     (eg http://localhost:1111/?userName=bobking) and remove the user's data from database, if userName exist in
     database.
   We can make a POST HTTP request with the userdata at localhost as
-    http://localhost:1111/?userData=userName,firstName,lastName
+    http://localhost:1111/?userName=userName&firstName=firstName&lastName=lastName
     (eg http://localhost:1111/?userName=tomgrey&firstName=Tom&lastName=Grey) and write the user's data into database,
     if userName not exist in database.
   We can make a PUT HTTP request with the userdata at localhost as
-    http://localhost:1111/?userData=userName,firstName,lastName
+    http://localhost:1111/?userName=userName&firstName=firstName&lastName=lastName
     (eg http://localhost:1111/?userName=tomgrey&firstName=TOM&lastName=GREY) and update the user's data in database,
     if userName exist in database.
   We can perform requests using Postman or some other way.
