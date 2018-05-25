@@ -8,8 +8,6 @@ import server.queryhandlers.GetHandler;
 import server.queryhandlers.PostHandler;
 import server.queryhandlers.PutHandler;
 import server.queryhandlers.checkers.ParamOnEmptyChecker;
-import server.queryhandlers.checkers.PostPutQueryStructureChecker;
-import server.queryhandlers.dataconverters.QueryConverter;
 
 import java.util.concurrent.atomic.AtomicLong;
 
